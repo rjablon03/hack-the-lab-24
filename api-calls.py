@@ -22,16 +22,37 @@ def mazeSandbox(mazeId):
 
     return response.json()
 
-def ratLocation(mazeId):
-    url = f"https://api.milabs.xyz/v1/rat/{mazeId}/surroundings"
+def ratSurroundings(mazeId):
+    url = f"http://api.milabs.xyz/v1/rat/{mazeId}/surroundings"
 
     headers = {
         'X-Api-Key': "781200B275164705"
     }
 
-    response = requests.get(url,headers=headers)
+    response = requests.get(url, headers=headers)
 
     return response.json()
 
+def moveRat(mazeId):
+    url = f"http://api.milabs.xyz/v1/rat/move"
+
+    headers = {
+        'X-Api-Key': "781200B275164705"
+    }
+    payload = {
+        "mazeId": mazeId,
+        "direction": "NORTH"
+    }
+    print(ratSurroundings(mazeId)['type'])
+    if ratSurroundings(mazeId)['type'] == 'Start':
+        print(1)
+        response = requests.post(url, headers=headers, json=payload)
+        return response.json()
+
+
+
+
 mazes = getMazes()
-print(mazeSandbox(mazes[0]['id']))
+print(ratSurroundings(mazes[0]['id']))
+print(moveRat(mazes[0]['id']))
+print(ratSurroundings(mazes[0]['id']))
