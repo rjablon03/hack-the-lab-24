@@ -1,7 +1,6 @@
 import requests
-import json
 
-def getMaze():
+def getMazes():
     url = "http://api.milabs.xyz/v1/mazes"
 
     headers = {
@@ -10,6 +9,29 @@ def getMaze():
 
     response = requests.get(url, headers=headers)
 
-    return response.content
+    return response.json()
 
-print(getMaze())
+def mazeSandbox(mazeId):
+    url = f"http://api.milabs.xyz/v1/maze/{mazeId}"
+
+    headers = {
+        'X-Api-Key': "781200B275164705"
+    }
+
+    response = requests.get(url=url, headers=headers)
+
+    return response.json()
+
+def ratLocation(mazeId):
+    url = f"https://api.milabs.xyz/v1/rat/{mazeId}/surroundings"
+
+    headers = {
+        'X-Api-Key': "781200B275164705"
+    }
+
+    response = requests.get(url,headers=headers)
+
+    return response.json()
+
+mazes = getMazes()
+print(mazeSandbox(mazes[0]['id']))
