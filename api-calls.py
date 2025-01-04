@@ -4,7 +4,7 @@ def getMazes():
     url = "http://api.milabs.xyz/v1/mazes"
 
     headers = {
-        'X-Api-Key': "781200B275164705"
+        'X-Api-Key': ""
     }
 
     response = requests.get(url, headers=headers)
