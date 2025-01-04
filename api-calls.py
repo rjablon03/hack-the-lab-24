@@ -1,7 +1,7 @@
 import requests
 
 def getMazes():
-    url = "http://api.milabs.xyz/v1/mazes"
+    url = ""
 
     headers = {
         'X-Api-Key': ""
@@ -12,7 +12,7 @@ def getMazes():
     return response.json()
 
 def mazeSandbox(mazeId):
-    url = f"http://api.milabs.xyz/v1/maze/{mazeId}"
+    url = f""
 
     headers = {
         'X-Api-Key': ""
@@ -23,7 +23,7 @@ def mazeSandbox(mazeId):
     return response.json()
 
 def ratSurroundings(mazeId):
-    url = f"http://api.milabs.xyz/v1/rat/{mazeId}/surroundings"
+    url = f""
 
     headers = {
         'X-Api-Key': ""
@@ -34,7 +34,7 @@ def ratSurroundings(mazeId):
     return response.json()
 
 def moveRat(mazeId):
-    url = f"http://api.milabs.xyz/v1/rat/move"
+    url = f""
 
     headers = {
         'X-Api-Key': ""
@@ -50,7 +50,7 @@ def moveRat(mazeId):
         return response.json()
 
 def exitMaze(mazeId):
-    url = f"http://api.milabs.xyz/v1/rat/exit"
+    url = f""
 
     headers = {
         'X-Api-Key': ""
