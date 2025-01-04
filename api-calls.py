@@ -15,7 +15,7 @@ def mazeSandbox(mazeId):
     url = f"http://api.milabs.xyz/v1/maze/{mazeId}"
 
     headers = {
-        'X-Api-Key': "781200B275164705"
+        'X-Api-Key': ""
     }
 
     response = requests.get(url=url, headers=headers)
@@ -26,7 +26,7 @@ def ratSurroundings(mazeId):
     url = f"http://api.milabs.xyz/v1/rat/{mazeId}/surroundings"
 
     headers = {
-        'X-Api-Key': "781200B275164705"
+        'X-Api-Key': ""
     }
 
     response = requests.get(url, headers=headers)
@@ -37,7 +37,7 @@ def moveRat(mazeId):
     url = f"http://api.milabs.xyz/v1/rat/move"
 
     headers = {
-        'X-Api-Key': "781200B275164705"
+        'X-Api-Key': ""
     }
     payload = {
         "mazeId": mazeId,
@@ -53,7 +53,7 @@ def exitMaze(mazeId):
     url = f"http://api.milabs.xyz/v1/rat/exit"
 
     headers = {
-        'X-Api-Key': "781200B275164705"
+        'X-Api-Key': ""
     }
 
     payload = {
